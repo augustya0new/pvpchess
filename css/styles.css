@@ -1,178 +1,85 @@
 /* styles.css */
 
-/* Chessboard */
 #chessboard {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    width: 400px;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Chessboard squares */
-#chessboard div {
-    border: 1px solid #000;
-    font-size: 30px;
+.row {
+    display: flex;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    position: relative;
 }
 
-/* Alternate square colors */
-#chessboard div:nth-child(even) {
-    background-color: #eee;
+/* Colors for alternate squares */
+.row:nth-child(odd) .square:nth-child(even),
+.row:nth-child(even) .square:nth-child(odd) {
+    background-color: #b58863;
 }
-
-/* Chess pieces */
-#chessboard div:before {
-    content: "";
-    font-size: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Example piece styles */
-#a1:before {
-    content: "\2656"; /* ♖ */
-}
-
-#b1:before {
-    content: "\2658"; /* ♘ */
-}
-
-#c1:before {
-    content: "\2657"; /* ♗ */
-}
-
-#d1:before {
-    content: "\2655"; /* ♕ */
-}
-
-#e1:before {
-    content: "\2654"; /* ♔ */
-}
-
-#f1:before {
-    content: "\2657"; /* ♗ */
-}
-
-#g1:before {
-    content: "\2658"; /* ♘ */
-}
-
-#h1:before {
-    content: "\2656"; /* ♖ */
-}
-
-#a2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#b2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#c2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#d2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#e2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#f2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#g2:before {
-    content: "\2659"; /* ♙ */
-}
-
-#h2:before {
-    content: "\2659"; /* ♙ */
-}
-
-/* Additional piece styles */
-#a8:before {
-    content: "\265C"; /* ♜ */
-}
-
-#b8:before {
-    content: "\265E"; /* ♞ */
-}
-
-#c8:before {
-    content: "\265D"; /* ♝ */
-}
-
-#d8:before {
-    content: "\265B"; /* ♛ */
-}
-
-#e8:before {
-    content: "\265A"; /* ♚ */
-}
-
-#f8:before {
-    content: "\265D"; /* ♝ */
-}
-
-#g8:before {
-    content: "\265E"; /* ♞ */
-}
-
-#h8:before {
-    content: "\265C"; /* ♜ */
-}
-
-#a7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#b7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#c7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#d7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#e7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#f7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#g7:before {
-    content: "\265F"; /* ♟ */
-}
-
-#h7:before {
-    content: "\265F"; /* ♟ */
-}
-
-/* Add more styles for other pieces if desired */
 
 /* Hover effect */
-#chessboard div:hover {
+.square:hover {
     background-color: #c7d4e9;
 }
 
 /* Selected piece effect */
-#chessboard div.selected {
+.square.selected {
     background-color: #99b5e2;
+}
+
+/* Unicode symbols for chess pieces */
+.square.piece-pawn-white:before {
+    content: "\2659";
+}
+
+.square.piece-pawn-black:before {
+    content: "\265F";
+}
+
+.square.piece-rook-white:before {
+    content: "\2656";
+}
+
+.square.piece-rook-black:before {
+    content: "\265C";
+}
+
+.square.piece-knight-white:before {
+    content: "\2658";
+}
+
+.square.piece-knight-black:before {
+    content: "\265E";
+}
+
+.square.piece-bishop-white:before {
+    content: "\2657";
+}
+
+.square.piece-bishop-black:before {
+    content: "\265D";
+}
+
+.square.piece-queen-white:before {
+    content: "\2655";
+}
+
+.square.piece-queen-black:before {
+    content: "\265B";
+}
+
+.square.piece-king-white:before {
+    content: "\2654";
+}
+
+.square.piece-king-black:before {
+    content: "\265A";
 }
